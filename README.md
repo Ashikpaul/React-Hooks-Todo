@@ -1,2 +1,6 @@
 # React-Hooks-Todo
-Created with CodeSandbox
+
+React Js
+React Hooks
+Browser local storage
+Bootstrap
