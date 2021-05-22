@@ -1,0 +1,43 @@
+body {
+  background-color: #ebd494;
+  font-size: 1.5rem;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 80vw;
+  height: 95vh;
+  background-color: aliceblue;
+  margin: 10px;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  background-color: green;
+  font-size: 2.5rem;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.allTodos {
+  text-align: center;
+}
+
+button {
+  margin-left: 20px;
+}
+
+form {
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  padding: 15px;
+}
