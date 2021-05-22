@@ -26,18 +26,19 @@ h1 {
 }
 
 .allTodos {
-  text-align: center;
+  text-align: left;
 }
 
 button {
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 
-form {
-  align-items: center;
-  justify-content: center;
+.mainArea {
+  margin: 40px;
 }
 
-input {
-  padding: 15px;
+.lineItem {
+  margin: 15px;
+  background: white;
+  border: green solid 3px;
 }

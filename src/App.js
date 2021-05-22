@@ -89,77 +89,80 @@ export default function App() {
   return (
     <div className="App">
       <h1>Todo App</h1>
-      {enableEdit ? (
-        <form onSubmit={handleEdit}>
-          <div className="mb-3 row">
-            <label className="col-sm-12 form-label">Edit todo: </label>
-            <div className="col-sm-8">
-              <input
-                className="form-control"
-                onChange={handleEditInputChange}
-                placeholder="Enter your new todo"
-                value={currentTodo.text}
-                type="text"
-              />
+      <div className="mainArea">
+        {enableEdit ? (
+          <form onSubmit={handleEdit}>
+            <div className="mb-3 row">
+              <label className="col-sm-12 form-label">Edit todo: </label>
+              <div className="col-sm-9">
+                <input
+                  className="form-control"
+                  onChange={handleEditInputChange}
+                  placeholder="Edit todo"
+                  value={currentTodo.text}
+                  type="text"
+                />
+              </div>
+              <div className="col-sm-3">
+                {/*type="submit will act like a form submit, so handleEdit() will get called on click"*/}
+                <button className="btn btn-success" type="submit">
+                  Update{" "}
+                </button>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setEditForm(false)}
+                >
+                  Cancel{" "}
+                </button>
+              </div>
             </div>
-            <div className="col-sm-4">
-              {/*type="submit will act like a form submit, so handleEdit() will get called on click"*/}
-              <button className="btn btn-success" type="submit">
-                Update{" "}
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={() => setEditForm(false)}
-              >
-                Cancel{" "}
-              </button>
+          </form>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3 row">
+              <label className="col-sm-12 form-label">New Todo </label>
+              <div className="col-sm-11">
+                <input
+                  className="form-control"
+                  onChange={handleAddInputChange}
+                  placeholder="Enter your new todo"
+                  value={todo}
+                  type="text"
+                />
+              </div>
+              <div className="col-sm-1">
+                <button type="submit" className="btn btn-success">
+                  Add{" "}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3 row">
-            <label className="col-sm-12 form-label">New Todo </label>
-            <div className="col-sm-8">
-              <input
-                className="form-control-plaintext"
-                onChange={handleAddInputChange}
-                placeholder="Enter your new todo"
-                value={todo}
-                type="text"
-              />
-            </div>
-            <div className="col-sm-2">
-              <button type="submit" className="btn btn-success">
-                Add{" "}
-              </button>
-            </div>
-          </div>
-        </form>
-      )}
-      <br />
-      <ul className="list-group allTodos">
-        {todos.map((e) => (
-          <li className="lineItem" key={e.id}>
-            <div className="listContents">
-              <span>{e.text}</span>
-
-              <button
-                className="btn btn-warning"
-                onClick={() => handleEditClick(e)}
-              >
-                Edit
-              </button>
-              <button
-                className="btn btn-danger"
-                onClick={() => handleTodoDelete(e.id)}
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+          </form>
+        )}
+        <br />
+        <ul className="list-group allTodos">
+          {todos.map((e) => (
+            <li className="lineItem row" key={e.id}>
+              <div className="col-sm-10">
+                <span>{e.text}</span>
+              </div>
+              <div className="col-sm-2">
+                <button
+                  className="btn btn-warning"
+                  onClick={() => handleEditClick(e)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleTodoDelete(e.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
