@@ -94,7 +94,7 @@ export default function App() {
           <form onSubmit={handleEdit}>
             <div className="mb-3 row">
               <label className="col-sm-12 form-label">Edit todo: </label>
-              <div className="col-sm-9">
+              <div className="col-sm-10">
                 <input
                   className="form-control"
                   onChange={handleEditInputChange}
@@ -103,7 +103,7 @@ export default function App() {
                   type="text"
                 />
               </div>
-              <div className="col-sm-3">
+              <div className="col-sm-2">
                 {/*type="submit will act like a form submit, so handleEdit() will get called on click"*/}
                 <button className="btn btn-success" type="submit">
                   Update{" "}

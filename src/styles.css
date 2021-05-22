@@ -38,7 +38,9 @@ button {
 }
 
 .lineItem {
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
   background: white;
   border: green solid 3px;
 }
